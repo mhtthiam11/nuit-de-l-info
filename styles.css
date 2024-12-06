@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('fond1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    z-index: 1;
+}
+
+.image {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite; /* Animation de flottement */
+}
+
+.logo {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: url('logo.png') no-repeat center/contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Monte à -10px */
+    }
+    100% {
+        transform: translateY(0); /* Retour à la position initiale */
+    }
+}
+
+/* Animation de zoom */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation de rotation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation de déplacement */
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, 50px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Animation de changement de couleur */
+@keyframes changeColor {
+    0% {
+        background-color: #ff0000;
+    }
+    50% {
+        background-color: #00ff00;
+    }
+    100% {
+        background-color: #ff0000;
+    }
+}
+
+/* Ajouter une animation spécifique au logo */
+.zoomIn {
+    animation: zoomIn 1s ease-in-out;
+}
+
+.rotate {
+    animation: rotate 1s ease-in-out;
+}
+
+.move {
+    animation: move 1s ease-in-out;
+}
+
+.changeColor {
+    animation: changeColor 1s ease-in-out;
+}
